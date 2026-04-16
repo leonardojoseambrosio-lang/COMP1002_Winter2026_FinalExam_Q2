@@ -3,7 +3,6 @@
 
 //Submit Button
 let form = document.getElementById("form");
-let submitBtn = document.getElementById("submitBtn");
 let username = document.getElementById("name");
 let email = document.getElementById("email");
 let thanksMessage = document.getElementById("thanksMessage");
@@ -26,8 +25,6 @@ else if(email.value.trim() == ""){
 
 else{
     // Show the hidden 'thanks' message and insert the user's name
-    thanksMessage.classList.add("thanks-style_show")
-
     thanksMessage.textContent = "Thank you! " + username.value + ", you have been registered."
     
     // Clear form fields after successful 'submission'
