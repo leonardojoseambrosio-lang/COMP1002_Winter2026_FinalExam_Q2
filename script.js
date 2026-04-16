@@ -1,7 +1,8 @@
 // --- DOM ELEMENT SELECTION ---
 // Selecting buttons and elements that will be manipulated by JavaScript
 
-//Send Button
+//Submit Button
+let form = document.getElementById("form");
 let submitBtn = document.getElementById("submitBtn");
 let username = document.getElementById("name");
 let email = document.getElementById("email");
@@ -9,7 +10,7 @@ let thanksMessage = document.getElementById("thanksMessage");
 
 // --- FORM VALIDATION and FEEDBACK ---
 // Validates user input and displays a personalized success message
-submitBtn.addEventListener("click", function(event){
+function submitEvent (event){
 event.preventDefault()
 
 // Basic validation for empty fields and email format
@@ -21,10 +22,7 @@ else if(email.value.trim() == ""){
     alert("Type your email.");
     email.focus();
 }
-else if(!email.value.includes("@")){
-    alert("Invalid email.");
-    email.focus();
-}
+
 
 else{
     // Show the hidden 'thanks' message and insert the user's name
@@ -37,4 +35,6 @@ else{
     email.value = "";
     message.value = "";
 }
-});
+};
+
+form.addEventListener("submit", submitEvent);
